@@ -1,5 +1,7 @@
 package com.londonappbrewery.climapm;
 
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageButton;
@@ -12,13 +14,14 @@ public class WeatherController extends AppCompatActivity {
     // Constants:
     final String WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather";
     // App ID to use OpenWeather data
-    final String APP_ID = "e72____PLEASE_REPLACE_ME_____13";
+    final String APP_ID = "1e51e7376b1a83f689311f2835d3cc6c";
     // Time between location updates (5000 milliseconds or 5 seconds)
     final long MIN_TIME = 5000;
     // Distance between location updates (1000m or 1km)
     final float MIN_DISTANCE = 1000;
 
     // TODO: Set LOCATION_PROVIDER here:
+    String LOCATION_PROVIDER = LocationManager.GPS_PROVIDER;
 
 
 
@@ -29,6 +32,8 @@ public class WeatherController extends AppCompatActivity {
     TextView mTemperatureLabel;
 
     // TODO: Declare a LocationManager and a LocationListener here:
+    LocationManager mLocationManager;
+    LocationListener mLocationListener;
 
 
     @Override
